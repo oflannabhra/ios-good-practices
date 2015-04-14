@@ -254,6 +254,31 @@ There are good introductions to the concept of RAC (and FRP in general) on [Teeh
 
 This allows us to transform or filter gigs before showing them, by combining the gig signal with other signals.
 
+## Appearance
+
+Apple provides application-wide appearance configuration through the [Appearance Proxy Protocol](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/index.html) as recommended in their [User Interface Catalog](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html#//apple_ref/doc/uid/TP40012857-UIView-SW16), but in larger applications, containing all appearance and configuration in a central location allows for easy editing. There are a variety of approaches to managing this complexity.
+
+### Configuration File
+
+This approach has both positives and negatives. Using a configuration file (and a framework that interprets it) in your project allows for your 
+
+* [UISS](https://github.com/robertwijas/UISS) - a framework that uses declarative, flat JSON files to managing application wide appearance
+* [NUI](https://github.com/tombenner/nui) - a framework that uses declarative, CSS-inspired configuration files to manage application wide appearance
+* [Pixate](http://www.pixate.com/) is a commercial, cross-platform prototyping solution that generates CSS that its native frameworks can consume.
+
+
+### Style Helper Class
+
+Style Helper Class - a central class responsible 
+
+
+### Categories
+
+extending classes such as `UIColor` to have custom methods 
+
+
+### Configuration Singleton
+A class that is instatiated once and configures any objects you send to it
 ## Assets
 
 [Asset catalogs][asset-catalogs] are the best way to manage all your project's visual assets. They can hold both universal and device-specific (iPhone 4-inch, iPhone Retina, iPad, etc.) assets and will automatically serve the correct ones for a given name. Teaching your designer(s) how to add and commit things there (Xcode has its own built-in Git client) can save a lot of time that would otherwise be spent copying stuff from emails or other channels to the codebase. It also allows them to instantly try out their changes and iterate if needed.
